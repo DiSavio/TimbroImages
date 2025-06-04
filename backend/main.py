@@ -5,8 +5,16 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Or ["http://localhost:5173"] for stricter policy
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to TimbroImages API"}
+
+@app.get("/status")
+def check_status():
+    return {"status": "Backend is running smoothly 🚀"}
