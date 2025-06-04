@@ -54,9 +54,7 @@ TimbroImages/
 Alexei Timbro (DiSavio)
 🔗 GitHub
 📧 alexei.timbro@gmail.com
-📄 License
 
-This project is currently for personal and educational use. Licensing will be added if the project becomes public-facing.
-✅ TODO Roadmap
+This project is currently for personal and educational use. 
 
 ---
