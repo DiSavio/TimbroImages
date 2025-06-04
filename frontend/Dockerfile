@@ -24,3 +24,4 @@ EXPOSE 4173
 
 # Start the app
 CMD ["serve", "-s", "dist"]
+
