@@ -8,7 +8,7 @@
 
 | Layer         | Tech                             |
 |--------------|-----------------------------------|
-| Frontend     | React (Vite or CRA)               |
+| Frontend     | React (Vite)               |
 | Backend      | Python + FastAPI                  |
 | Database     | PostgreSQL                        |
 | Containerization | Docker + Docker Compose     |
