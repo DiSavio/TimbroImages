@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
+import "./App.css"; // Make sure you create this CSS file
 
-function BackendStatus() {
+function App() {
   const [welcomeMessage, setWelcomeMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
 
   useEffect(() => {
-    // Fetch welcome message
     fetch("http://localhost:8000/")
       .then((res) => res.json())
       .then((data) => setWelcomeMessage(data.message))
       .catch((err) => console.error("Error fetching welcome:", err));
 
-    // Fetch status message
     fetch("http://localhost:8000/status")
       .then((res) => res.json())
       .then((data) => setStatusMessage(data.status))
@@ -19,12 +18,24 @@ function BackendStatus() {
   }, []);
 
   return (
-    <div>
-      <h1>Backend Messages</h1>
-      <p><strong>Welcome:</strong> {welcomeMessage}</p>
-      <p><strong>Status:</strong> {statusMessage}</p>
+    <div className="app-container">
+      <header className="top-bar">
+        <h1>TimbroImages</h1>
+        <div className="user-info"> User</div>
+      </header>
+
+      <main className="main-content">
+        <div className="card">
+          <h2>Welcome Message</h2>
+          <p>{welcomeMessage}</p>
+        </div>
+        <div className="card">
+          <h2>Status</h2>
+          <p>{statusMessage}</p>
+        </div>
+      </main>
     </div>
   );
 }
 
-export default BackendStatus;
+export default App;

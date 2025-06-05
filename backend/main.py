@@ -17,4 +17,4 @@ def read_root():
 
 @app.get("/status")
 def check_status():
-    return {"status": "Backend is running smoothly 🚀"}
+    return {"status": "Backend is running good"}
