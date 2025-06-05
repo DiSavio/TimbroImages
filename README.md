@@ -29,24 +29,6 @@
 
 ---
 
-## 📁 Project Structure
-
-TimbroImages/
-├── backend/
-│ ├── main.py # FastAPI app
-│ ├── Dockerfile # Backend Docker config
-│ └── requirements.txt # Python dependencies
-├── frontend/
-│ ├── src/ # React source code
-│ └── Dockerfile # Frontend Docker config
-├── docker-compose.yml # Orchestrates backend + frontend + DB
-├── .env # Environment variables
-├── .gitignore
-└── README.md # Project documentation
-
-
----
-
 📦 Deployment Plan (Proxmox Home Server)
 
 🧑‍💻 Author
