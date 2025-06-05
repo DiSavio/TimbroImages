@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
 
-function App() {
+function BackendStatus() {
+  const [welcomeMessage, setWelcomeMessage] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
+
+  useEffect(() => {
+    // Fetch welcome message
+    fetch("http://localhost:8000/")
+      .then((res) => res.json())
+      .then((data) => setWelcomeMessage(data.message))
+      .catch((err) => console.error("Error fetching welcome:", err));
+
+    // Fetch status message
+    fetch("http://localhost:8000/status")
+      .then((res) => res.json())
+      .then((data) => setStatusMessage(data.status))
+      .catch((err) => console.error("Error fetching status:", err));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Backend Messages</h1>
+      <p><strong>Welcome:</strong> {welcomeMessage}</p>
+      <p><strong>Status:</strong> {statusMessage}</p>
     </div>
   );
 }
 
-export default App;
+export default BackendStatus;
