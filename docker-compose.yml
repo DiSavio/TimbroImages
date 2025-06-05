@@ -1,4 +1,5 @@
 version: '3.9'
+
 services:
   db:
     image: postgres:15
@@ -26,13 +27,15 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend-cra
       dockerfile: Dockerfile.dev
     ports:
-      - "5173:5173"
+      - "3000:3000"
     volumes:
-      - ./frontend:/app
-    command: npm run dev
+      - ./frontend-cra:/frontend-cra
+      - /frontend-cra/node_modules 
+    working_dir: /frontend-cra
+    command: npm start
 
 volumes:
   postgres_data:
