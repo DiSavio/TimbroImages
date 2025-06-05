@@ -1,6 +1,6 @@
 # 📸 Timbro Images
 
-**Timbro Images** is a self-hosted image search and file management web application inspired by the core functionality of Google Images. Built for personal/family use, this app allows searching, uploading, and organizing image files, all running securely on your own server infrastructure.
+**Timbro Images** is a self-hosted image search and file management web application inspired by the core functionality of Google Photos. Built for personal/family use, this app allows searching, uploading, and organizing image files, all running securely on your own server infrastructure.
 
 ---
 
