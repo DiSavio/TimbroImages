@@ -17,4 +17,5 @@ def read_root():
 
 @app.get("/status")
 def check_status():
-    return {"status": "Backend is running good"}
+    return {"status": "This is a test to run the backend of my TimbroImages app"}
+

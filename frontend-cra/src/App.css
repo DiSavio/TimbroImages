@@ -1,44 +1,102 @@
 /* App.css */
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  background-color: #f5f6f8;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f3f3f3;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
+.onedrive-wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
   height: 100vh;
 }
 
-.top-bar {
+.onedrive-header {
+  grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  padding: 16px 24px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #0078d4;
+  color: white;
+  padding: 0 24px;
 }
 
-.main-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user-section {
+  font-weight: 500;
+}
+
+.onedrive-sidebar {
+  grid-area: sidebar;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  padding: 16px;
+}
+
+.onedrive-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.onedrive-sidebar li {
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.onedrive-sidebar li:hover {
+  background-color: #f0f0f0;
+}
+
+.onedrive-main {
+  grid-area: main;
   padding: 24px;
 }
 
-.card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: 0.2s ease;
+.onedrive-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.card:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.user-info {
+.onedrive-toolbar button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
   font-weight: bold;
+}
+
+.onedrive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.onedrive-card {
+  background-color: #ffffff;
+  padding: 16px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.onedrive-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
