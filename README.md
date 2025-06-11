@@ -19,7 +19,7 @@
 
 ## ✨ Features (Planned & Current)
 
-- ⏳ Image upload & storage
+- ✅ Image upload & storage
 - ⏳ Search functionality (by filename / metadata)
 - ⏳ Basic file management (rename, delete)
 - ⏳ Responsive frontend with React
