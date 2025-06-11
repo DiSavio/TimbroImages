@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./App.css"; // Make sure you create this CSS file
+import { Folder, File } from "lucide-react";
+import "./App.css";
 
 function App() {
   const [welcomeMessage, setWelcomeMessage] = useState("");
@@ -18,23 +19,40 @@ function App() {
   }, []);
 
   return (
-    <div className="app-container">
-      <header className="top-bar">
-        <h1>TimbroImages</h1>
-        <div className="user-info"> User</div>
+    <div className="onedrive-wrapper">
+      <header className="onedrive-header">
+        <div className="logo">TimbroImages</div>
+        <div className="user-section">User</div>
       </header>
 
-      <main className="main-content">
-        <div className="card">
-          <h2>Welcome Message</h2>
-          <p>{welcomeMessage}</p>
+      <div className="onedrive-sidebar">
+        <ul>
+          <li>My Files</li>
+          <li>Recent</li>
+          <li>Shared</li>
+          <li>Recycle Bin</li>
+        </ul>
+      </div>
+
+      <main className="onedrive-main">
+        <div className="onedrive-toolbar">
+          <button>Upload</button>
+          <button>New Folder</button>
         </div>
-        <div className="card">
-          <h2>Status</h2>
-          <p>{statusMessage}</p>
+
+        <div className="onedrive-grid">
+          <div className="onedrive-card">
+            <Folder size={32} />
+            <span>{welcomeMessage}</span>
+          </div>
+          <div className="onedrive-card">
+            <File size={32} />
+            <span>{statusMessage}</span>
+          </div>
         </div>
       </main>
     </div>
+    
   );
 }
 
