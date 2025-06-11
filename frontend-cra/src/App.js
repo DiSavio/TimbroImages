@@ -115,17 +115,55 @@ function App() {
         <div className="onedrive-grid">
           <div className="onedrive-card">
             <Folder size={32} />
-            <span>{welcomeMessage}</span>
+            <span
+              style={{
+                display: "block",
+                maxWidth: "100%",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                wordBreak: "break-all",
+              }}
+              title={welcomeMessage}
+            >
+              {welcomeMessage}
+            </span>
           </div>
           <div className="onedrive-card">
             <File size={32} />
-            <span>{statusMessage}</span>
+            <span
+              style={{
+                display: "block",
+                maxWidth: "100%",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                wordBreak: "break-all",
+              }}
+              title={statusMessage}
+            >
+              {statusMessage}
+            </span>
           </div>
           {selectedFiles.length > 0 &&
             selectedFiles.map((file, idx) => (
               <div className="onedrive-card" key={idx}>
                 {getFileIcon(file)}
-                <span>{file.name}</span>
+                <span
+                  style={{
+                    display: "block",
+                    maxWidth: "100%",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                    wordBreak: "normal", // changed from break-all to normal
+                  }}
+                  title={file.name}
+                >
+                  {file.name.length > 20
+                    ? file.name.slice(0, 17) + "..."
+                    : file.name}
+                </span>
               </div>
             ))}
         </div>
