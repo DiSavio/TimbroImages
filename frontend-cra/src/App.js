@@ -156,7 +156,7 @@ function App() {
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
-                    wordBreak: "normal", // changed from break-all to normal
+                    wordBreak: "normal",
                   }}
                   title={file.name}
                 >
